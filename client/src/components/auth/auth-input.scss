@@ -1,0 +1,47 @@
+.auth__input-wrapper {
+    margin-bottom: 30px;
+    position: relative;
+
+    &--error {
+        > input {
+            border: 1px solid red !important;
+            &:focus {
+                box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2), 0 0 0 1px red !important;
+                outline: none;
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.6rem;
+        // ! RED COLOR
+        // color: red;
+        fill: red;
+        height: 20px;
+        width: 20px;
+    }
+
+    > input {
+        border: none;
+        height: 50px;
+        padding: 0 16px;
+        font-size: 1rem;
+        color: var(--gray-dark);
+        transition: 0.3s box-shadow;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: var(--radius-medium);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        padding-right: 50px;
+        border: 1px solid var(--blue-primary);
+
+        &:focus {
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--blue-primary);
+            outline: none;
+        }
+    }
+}
