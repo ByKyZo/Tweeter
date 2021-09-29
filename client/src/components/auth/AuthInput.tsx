@@ -53,7 +53,9 @@ const AuthInput = ({ error, isTouched, ...rest }: IProps) => {
                         <CgCheckO />
                     </div>
                 ))}
-            <Tooltip triggerEl={iconRef}>{error}</Tooltip>
+            <Tooltip isOpen={isTouched && !!error} triggerEl={iconRef}>
+                {error}
+            </Tooltip>
         </div>
     );
 };

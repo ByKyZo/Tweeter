@@ -9,6 +9,7 @@ export interface ITooltipProps {
     className?: string;
     triggerEl: HTMLElement | null;
     placement?: VariationPlacement;
+    isOpen?: boolean;
     offset?: [number, number];
     noArrow?: boolean;
     forceVisible?: boolean;
@@ -22,6 +23,7 @@ const Tooltip = ({
     children,
     className,
     forceVisible,
+    isOpen,
 }: ITooltipProps) => {
     const nodeRef = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -48,6 +50,11 @@ const Tooltip = ({
         placement: placement || 'right',
         strategy: 'fixed',
     });
+
+    useEffect(() => {
+        if (isOpen === undefined) return;
+        setIsVisible(isOpen);
+    }, [isOpen]);
 
     useEffect(() => {
         if (!triggerEl) return;
