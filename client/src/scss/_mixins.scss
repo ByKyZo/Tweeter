@@ -1,0 +1,42 @@
+@mixin border-radius($size) {
+    @if ($size == tiny) {
+        border-radius: 3px;
+    } @else if ($size == small) {
+        border-radius: 6px;
+    } @else if ($size == medium) {
+        border-radius: 9px;
+    } @else if ($size == big) {
+        border-radius: 12px;
+    } @else if($size == rounded) {
+        border-radius: 9999px;
+    }
+}
+
+@mixin display-direction-justify-align(
+    $display: flex,
+    $direction: row,
+    $justify: stretch,
+    $align: stretch
+) {
+    // CENTRE DANS TOUT LES AXES
+    @if ($display == 'fullcenter') {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // CENTRE VERTICALEMENT (vr = vertical)
+    } @else if($display == 'vrcenter') {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        // CENTRE HORIZONTALEMENT (hr = horizontal)
+    } @else if($display == 'hrcenter') {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    } @else {
+        display: $display;
+        flex-direction: $direction;
+        justify-content: $justify;
+        align-items: $align;
+    }
+}
