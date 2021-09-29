@@ -18,11 +18,24 @@
         top: 50%;
         transform: translateY(-50%);
         font-size: 1.6rem;
-        // ! RED COLOR
-        // color: red;
-        fill: red;
-        height: 20px;
-        width: 20px;
+        height: 24px;
+        width: 24px;
+        display: flex;
+
+        > svg {
+            height: 100%;
+            width: 100%;
+            animation: scaleIcon 0.3s ease;
+        }
+
+        &--error {
+            color: red;
+        }
+
+        &--success {
+            // color: green;
+            color: var(--blue-primary);
+        }
     }
 
     > input {
@@ -43,5 +56,14 @@
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--blue-primary);
             outline: none;
         }
+    }
+}
+
+@keyframes scaleIcon {
+    0% {
+        transform: scale(0.2) rotate(-45deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
     }
 }

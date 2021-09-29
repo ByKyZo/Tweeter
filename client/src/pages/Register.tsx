@@ -50,22 +50,32 @@ const Register = () => {
         <AuthLayout onFormSubmit={formik.handleSubmit} isSignin={false}>
             <AuthInput
                 {...formik.getFieldProps('firstName')}
+                error={formik.errors.firstName}
+                isTouched={formik.touched.firstName}
                 type="text"
                 placeholder="First name"></AuthInput>
             <AuthInput
                 {...formik.getFieldProps('lastName')}
+                error={formik.errors.lastName}
+                isTouched={formik.touched.lastName}
                 type="text"
                 placeholder="Last name"></AuthInput>
             <AuthInput
                 {...formik.getFieldProps('email')}
+                error={formik.errors.email}
+                isTouched={formik.touched.email}
                 type="email"
                 placeholder="Email"></AuthInput>
             <AuthInput
                 {...formik.getFieldProps('password')}
+                error={formik.errors.password}
+                isTouched={formik.touched.password}
                 type="password"
                 placeholder="Password"></AuthInput>
             <AuthInput
                 {...formik.getFieldProps('confirmPassword')}
+                error={formik.errors.confirmPassword}
+                isTouched={formik.touched.confirmPassword}
                 type="password"
                 placeholder="Confirm Password"></AuthInput>
         </AuthLayout>
