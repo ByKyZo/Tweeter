@@ -7,6 +7,7 @@ import './tooltip.scss';
 export interface ITooltipProps {
     children?: React.ReactNode;
     className?: string;
+    arrowClassName?: string;
     triggerEl: HTMLElement | null;
     placement?: VariationPlacement;
     isOpen?: boolean;
@@ -22,6 +23,7 @@ const Tooltip = ({
     noArrow,
     children,
     className,
+    arrowClassName,
     forceVisible,
     isOpen,
 }: ITooltipProps) => {
@@ -101,13 +103,13 @@ const Tooltip = ({
                             {...attributes.popper}>
                             {children}
 
-                            {!noArrow && (
-                                <div
-                                    className="tooltip-arrow"
-                                    data-popper-arrow=""
-                                    style={styles.arrow}
-                                />
-                            )}
+                            {/* {!noArrow && ( */}
+                            <div
+                                className={`tooltip-arrow ${arrowClassName ? arrowClassName : ''}`}
+                                data-popper-arrow=""
+                                style={styles.arrow}
+                            />
+                            {/* // )} */}
                         </div>
                     </div>
                 </CSSTransition>,

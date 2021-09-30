@@ -3,10 +3,7 @@ import { CgCheckO } from 'react-icons/cg';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import Tooltip from '../widgets/tooltip/Tooltip';
 import './auth-input.scss';
-// TODO Configuer les tooltip PS : reprendre la config d'ancien projet
-// TODO Afficher les erreurs dans le tooltips
-// TODO Activer l'icon et le mettre en rouge si il y'a une erreur
-// TODO Si le champ et valide mettre une chose verte
+
 // TODO Animer les apparations des icons avec MORPH SVG !
 
 // TODO Faire un morph svg tester !
@@ -22,15 +19,6 @@ interface IProps extends React.HTMLProps<HTMLInputElement> {
 const AuthInput = ({ error, isTouched, ...rest }: IProps) => {
     const [hasError, setHasError] = useState(false);
     const [iconRef, setIconRef] = useState<any>(null);
-    // const tlMemo = useMemo(
-    //     () =>
-    //         anime.timeline({
-    //             autoplay: false,
-    //             easing: 'easeInOutSine',
-    //             duration: 300,
-    //         }),
-    //     []
-    // );
 
     const errorStyle = hasError && 'auth__input-wrapper--error';
 
@@ -53,7 +41,13 @@ const AuthInput = ({ error, isTouched, ...rest }: IProps) => {
                         <CgCheckO />
                     </div>
                 ))}
-            <Tooltip isOpen={isTouched && !!error} triggerEl={iconRef}>
+            <Tooltip
+                noArrow={true}
+                offset={[0, 20]}
+                className="auth__input-wrapper__tooltip"
+                arrowClassName="auth__input-wrapper__tooltip--arrow"
+                isOpen={isTouched && !!error}
+                triggerEl={iconRef}>
                 {error}
             </Tooltip>
         </div>
