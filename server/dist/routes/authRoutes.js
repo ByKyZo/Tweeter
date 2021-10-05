@@ -5,7 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 var express_1 = __importDefault(require("express"));
 var AuthController_1 = __importDefault(require("../controllers/AuthController"));
 var router = express_1.default.Router();
-router.get('/login', AuthController_1.default.login);
+router.post('/login', AuthController_1.default.login);
+router.post('/register', AuthController_1.default.register);
 module.exports = router;
 // AuthController.lo
 // new AuthController().login();

@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import * as Yup from 'yup';
 import AuthInput from '../components/auth/AuthInput';
 import AuthLayout from '../components/auth/AuthLayout';
+import axios from '../config/axios';
 
 /**
  * ? First and Last name min and max chars source :
@@ -38,7 +39,11 @@ const Register = () => {
                 .oneOf([Yup.ref('password'), null], 'Password must matched'),
         }),
         onSubmit: (values) => {
-            console.log(values);
+            // console.log(values);
+            axios
+                .post('/auth/register', {})
+                .then((res) => console.log(res))
+                .catch(() => console.log('register error'));
         },
     });
 

@@ -7,6 +7,9 @@ var AuthController = /** @class */ (function () {
     AuthController.login = function (req, res) {
         database_1.db.query('INSERT INTO user VALUES (DEFAULT,"toto","toto","ezreezz")');
     };
+    AuthController.register = function (req, res) {
+        res.send({ success: 'yeah request success' });
+    };
     return AuthController;
 }());
 exports.default = AuthController;
