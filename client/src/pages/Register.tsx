@@ -41,7 +41,7 @@ const Register = () => {
         onSubmit: (values) => {
             // console.log(values);
             axios
-                .post('/auth/register', {})
+                .post('/auth/register', { ...values })
                 .then((res) => console.log(res))
                 .catch(() => console.log('register error'));
         },
