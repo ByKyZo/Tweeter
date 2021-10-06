@@ -14,6 +14,15 @@ var AuthController = /** @class */ (function () {
     };
     AuthController.register = function (req, res) {
         var _a = req.body, firstName = _a.firstName, lastName = _a.lastName, email = _a.email, password = _a.password;
+        // try {
+        // } catch {
+        // }
+        // try {
+        // } catch {
+        // }
+        // try {
+        // } catch {
+        // }
         if (!validator_1.default.isLength(firstName, { min: 2, max: 30 }) ||
             !validator_1.default.isLength(lastName, { min: 2, max: 30 }) ||
             !validator_1.default.isEmail(email) ||

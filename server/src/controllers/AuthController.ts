@@ -11,7 +11,21 @@ export default class AuthController {
 
     public static register(req: Request, res: Response) {
         const { firstName, lastName, email, password } = req.body;
+        // try {
 
+        // } catch {
+
+        // }
+        // try {
+
+        // } catch {
+
+        // }
+        // try {
+
+        // } catch {
+
+        // }
         if (
             !validator.isLength(firstName, { min: 2, max: 30 }) ||
             !validator.isLength(lastName, { min: 2, max: 30 }) ||
